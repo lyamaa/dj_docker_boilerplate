@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-xep+8gzabfn8_oj%9tv9-hj#$l!o80zv@s7p-ko5aga89@yv#+
 
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["http://*", "https://*"]
 
 # Application definition
 
