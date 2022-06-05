@@ -1,0 +1,4 @@
+[flake8]
+ignore = D203
+exclude = .git,__pycache__,docs/source/conf.py,old,build,dist,src/flake8.ini,venv,settings
+max-complexity = 10
