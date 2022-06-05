@@ -4,17 +4,18 @@ from pathlib import Path
 
 env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+
 environ.Env.read_env(env_file=str(Path.joinpath(BASE_DIR, ".env")))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://*", "https://*"]
+ALLOWED_HOSTS = list(os.environ.get("ALLOWED_HOSTS").split(","))
+CSRF_TRUSTED_ORIGINS = list(os.environ.get("CSRF_TRUSTED_ORIGINS").split(","))
 
 # Application definition
 
